@@ -6,14 +6,30 @@
 <h1>🧁Welcome to Pierre's Sweet and Savory Treats!🧁</h1>
 <hr>
 <br>
-@foreach (Flavor flavor in Model["Flavors"])
-{
-  <p>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</p>
-}
-@foreach (Treat treat in Model["Treats"])
-{
-  <p>@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId })</p>
-}
+<div class="row">
+  <div class="col-md-6">
+    <h3>Available Flavors</h3>
+    @foreach (Flavor flavor in Model["Flavors"])
+    {
+      <p>@Html.ActionLink($"{flavor.Name}", "Details", "Flavors", new { id = flavor.FlavorId })</p>
+    }
+  </div>
+  <div class="col-md-6">
+    <h3>Available Treats</h3>
+    @foreach (Treat treat in Model["Treats"])
+    {
+      <p>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })</p>
+    }
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <p>@Html.ActionLink("Sign into an account", "Index", "Account")</p>
 <p>@Html.ActionLink("See all Treats", "Index", "Treats")</p> 
 <p>@Html.ActionLink("See all Flavors", "Index", "Flavors")</p>
