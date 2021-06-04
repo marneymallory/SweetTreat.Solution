@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using WeekFiveTemplate.Models;
 using System.Threading.Tasks;
-using WeekFiveTemplate.ViewModels;
+using SweetTreat.ViewModels;
 
-namespace WeekFiveTemplate.Controllers
+namespace SweetTreat.Controllers
 {
   public class AccountController : Controller
   {
