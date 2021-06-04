@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace WeekFiveTemplate.Models
+namespace SweetTreat.Models
 {
-  public class WeekFiveTemplateContext : IdentityDbContext<ApplicationUser>
+  public class SweetTreatContext : IdentityDbContext<ApplicationUser>
   {
-    public virtual DbSet<TemplateCategory> TemplateCategories { get; set; }
-    public DbSet<TemplateItem> TemplateItems { get; set; }
-    public DbSet<TemplateCategoryItem> TemplateCategoryItem { get; set; }
+    public virtual DbSet<Flavor> Flavors { get; set; }
+    public DbSet<Treat> Treats { get; set; }
+    public DbSet<FlavorTreat> FlavorTreat { get; set; }
 
-    public WeekFiveTemplateContext(DbContextOptions options) : base(options) { }
+    public SweetTreatContext(DbContextOptions options) : base(options) { }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

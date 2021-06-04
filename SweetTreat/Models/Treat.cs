@@ -1,17 +1,18 @@
 using System.Collections.Generic;
 
-namespace WeekFiveTemplate.Models
+namespace SweetTreat.Models
 {
-  public class TemplateItem
+  public class Treat
   {
-    public TemplateItem()
+    public Treat()
     {
-      this.TemplateCategories = new HashSet<TemplateCategoryItem>();
+      this.Flavors = new HashSet<FlavorTreat>();
     }
 
-    public int TemplateItemId { get; set; }
-    public int SomeProperty { get; set; }
+    public int TreatId { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
     public virtual ApplicationUser User { get; set; }
-    public virtual ICollection<TemplateCategoryItem> TemplateCategories { get; }
+    public virtual ICollection<FlavorTreat> Flavors { get; }
   }
 }

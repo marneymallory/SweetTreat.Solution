@@ -1,11 +1,11 @@
-namespace WeekFiveTemplate.Models
+namespace SweetTreat.Models
 {
-  public class TemplateCategoryItem
+  public class FlavorTreat
   {
-    public int TemplateCategoryItemId { get; set; }
-    public int TemplateItemId { get; set; }
-    public int TemplateCategoryId { get; set; }
-    public virtual TemplateItem TemplateItem { get; set; }
-    public virtual TemplateCategory TemplateCategory { get; set; }
+    public int FlavorTreatId { get; set; }
+    public int TreatId { get; set; }
+    public int FlavorId { get; set; }
+    public virtual Treat Treat { get; set; }
+    public virtual Flavor Flavor { get; set; }
   }
 }

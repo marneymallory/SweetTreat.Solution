@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace WeekFiveTemplate.ViewModels
+namespace SweetTreat.ViewModels
 {
   public class RegisterViewModel
   {

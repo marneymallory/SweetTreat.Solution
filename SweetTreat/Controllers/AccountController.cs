@@ -8,11 +8,11 @@ namespace SweetTreat.Controllers
 {
   public class AccountController : Controller
   {
-    private readonly WeekFiveTemplateContext _db;
+    private readonly SweetTreatContext _db;
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
 
-    public AccountController (UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, WeekFiveTemplateContext db)
+    public AccountController (UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, SweetTreatContext db)
     {
       _userManager = userManager;
       _signInManager = signInManager;

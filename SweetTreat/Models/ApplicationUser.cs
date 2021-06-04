@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace WeekFiveTemplate.Models
+namespace SweetTreat.Models
 {
     public class ApplicationUser : IdentityUser
     {

@@ -4,23 +4,23 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace WeekFiveTemplate.Models
+namespace SweetTreat.Models
 {
-  public class WeekFiveTemplateContextFactory : IDesignTimeDbContextFactory<WeekFiveTemplateContext>
+  public class SweetTreatContextFactory : IDesignTimeDbContextFactory<SweetTreatContext>
   {
 
-    WeekFiveTemplateContext IDesignTimeDbContextFactory<WeekFiveTemplateContext>.CreateDbContext(string[] args)
+    SweetTreatContext IDesignTimeDbContextFactory<SweetTreatContext>.CreateDbContext(string[] args)
     {
       IConfigurationRoot configuration = new ConfigurationBuilder()
           .SetBasePath(Directory.GetCurrentDirectory())
           .AddJsonFile("appsettings.json")
           .Build();
 
-      var builder = new DbContextOptionsBuilder<WeekFiveTemplateContext>();
+      var builder = new DbContextOptionsBuilder<SweetTreatContext>();
 
       builder.UseMySql(configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(configuration["ConnectionStrings:DefaultConnection"]));
 
-      return new WeekFiveTemplateContext(builder.Options);
+      return new SweetTreatContext(builder.Options);
     }
   }
 }

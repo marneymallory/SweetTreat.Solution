@@ -7,17 +7,17 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Security.Claims;
-using WeekFiveTemplate.Models;
+using SweetTreat.Models;
 
-namespace WeekFiveTemplate.Controllers
+namespace SweetTreat.Controllers
 {
   [Authorize]
-  public class TemplateItemsController : Controller
+  public class TreatsController : Controller
   {
-    private readonly WeekFiveTemplateContext _db;
+    private readonly SweetTreatContext _db;
     private readonly UserManager<ApplicationUser> _userManager;
 
-    public TemplateItemsController(UserManager<ApplicationUser> userManager, WeekFiveTemplateContext db)
+    public TreatsController(UserManager<ApplicationUser> userManager, SweetTreatContext db)
     {
       _userManager = userManager;
       _db = db;
@@ -27,27 +27,27 @@ namespace WeekFiveTemplate.Controllers
     {
         var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         var currentUser = await _userManager.FindByIdAsync(userId);
-        var userItems = _db.TemplateItems.Where(entry => entry.User.Id == currentUser.Id).ToList();
-        return View(userItems);
+        var userTreats = _db.Treats.Where(entry => entry.User.Id == currentUser.Id).ToList();
+        return View(userTreats);
     }
 
      public ActionResult Create()
     {
-      ViewBag.TemplateCategoryId = new SelectList(_db.TemplateCategories, "TemplateCategoryId", "Name");
+      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
       return View();
     }
 
     [HttpPost]
-    public async Task<ActionResult> Create(TemplateItem item, int CategoryId)
+    public async Task<ActionResult> Create(Treat treat, int FlavorId)
     {
         var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         var currentUser = await _userManager.FindByIdAsync(userId);
-        item.User = currentUser;
-        _db.TemplateItems.Add(item);
+        treat.User = currentUser;
+        _db.Treats.Add(treat);
         _db.SaveChanges();
         if (CategoryId != 0)
         {
-            _db.TemplateCategoryItem.Add(new TemplateCategoryItem() { TemplateCategoryId = CategoryId, TemplateItemId = item.TemplateItemId });
+            _db.FlavorTreat.Add(new FlavorTreat() { FlavorId = FlavorId, TreatId = treat.TreatId });
         }
         _db.SaveChanges();
         return RedirectToAction("Index");

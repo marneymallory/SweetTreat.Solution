@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 
-namespace WeekFiveTemplate.Models
+namespace SweetTreat.Models
 {
-  public class TemplateCategory
+  public class Flavor
   {
-    public TemplateCategory()
+    public Flavor()
     {
-      this.JoinEntities = new HashSet<TemplateCategoryItem>();
+      this.JoinEntities = new HashSet<FlavorTreat>();
     }
 
-    public int TemplateCategoryId { get; set; }
-    public string SomeProperty { get; set; }
-    public virtual ICollection<TemplateCategoryItem> JoinEntities { get; set; }
+    public int FlavorId { get; set; }
+    public string Name { get; set; }
+    public virtual ICollection<FlavorTreat> JoinEntities { get; set; }
   }
 }

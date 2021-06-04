@@ -1,4 +1,4 @@
-namespace WeekFiveTemplate.ViewModels
+namespace SweetTreat.ViewModels
 {
   public class LoginViewModel
   {
