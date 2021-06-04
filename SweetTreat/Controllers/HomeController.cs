@@ -1,4 +1,9 @@
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
+using SweetTreat.Models;
 
 namespace SweetTreat.Controllers
 {
@@ -12,9 +17,9 @@ namespace SweetTreat.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      Dictionary model = new Dictionary<string, List>();
+      Dictionary<string, object> model = new Dictionary<string, object>();
       List<Flavor> flavorList = _db.Flavors.ToList();
-      flavorList<Treat> treatList = _db.Treats.ToList();
+      List<Treat> treatList = _db.Treats.ToList();
       model.Add("Flavors", flavorList);
       model.Add("Treats", treatList);
       return View(model);

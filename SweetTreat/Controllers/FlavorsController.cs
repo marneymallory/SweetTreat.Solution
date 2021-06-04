@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using WeekFiveTemplate.Models;
+using SweetTreat.Models;
 using System.Collections.Generic;
 using System.Linq;
 

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
-using WeekFiveTemplate.Models;
+using SweetTreat.Models;
 using System.Threading.Tasks;
 using SweetTreat.ViewModels;
 

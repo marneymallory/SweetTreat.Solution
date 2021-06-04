@@ -45,7 +45,7 @@ namespace SweetTreat.Controllers
         treat.User = currentUser;
         _db.Treats.Add(treat);
         _db.SaveChanges();
-        if (CategoryId != 0)
+        if (FlavorId != 0)
         {
             _db.FlavorTreat.Add(new FlavorTreat() { FlavorId = FlavorId, TreatId = treat.TreatId });
         }
