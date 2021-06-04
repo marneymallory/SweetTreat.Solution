@@ -1,12 +1,12 @@
-# Project Name
+# Pierre's Sweet and Savory Treats
 
-#### _Brief Project Description, 5/21/2021_
+#### _C# Week 5 Independent Project, 5/21/2021_
 
 #### By _**Marney Mallory**_
 
 ## Description
 
-Project Description.
+This week's independent project objective was to create a MVC application that implements authentication with Identity and many-to-many relationships.
 
 ## Setup and Use
 
@@ -20,35 +20,38 @@ Project Description.
 
 ### Installation
 
-1. Clone the repository: `$ git clone {clone link}`
-2. Navigate to the `{Template.Solution}` directory on your computer
+1. Clone the repository: `$ git clone https://github.com/marneymallory/SweetTreat.Solution.git`
+2. Navigate to the `SweetTreat.Solution` directory on your computer
 3. Open with your preferred text editor to view the code base
 4. To setup a SQL database using MySQL:
-   - Create an `appsettings.json` file in the `{WeekFiveTemplate}` directory
+   - Create an `appsettings.json` file in the `SweetTreat` directory
    - Copy the text box below and paste into the `appsettings.json` file, replacing `<password>` with your MySQL password:
    ```
      {
         "ConnectionStrings": {
-           "DefaultConnection": "Server=localhost;Port=3306;database=tiffany_greathead;uid=root;pwd=<password>;"
+           "DefaultConnection": "Server=localhost;Port=3306;database=marney_mallory;uid=root;pwd=<password>;"
          }
      }
    ```
    - Open your terminal and run the command: `mysql -uroot -p<mysql_password>` (replace `<mysql_password>` with your MySQL password) to launch MySQL server
 5. To serve the local web app:
 
-- Navigate to `{Template.Solution/WeekFiveTemplate}` in your command line
+- Navigate to `SweetTreat.Solution/SweetTreat` in your command line
 - Run the commands:
-  - `dotnet restore` to restore the dependencies that are listed in `{Template.csproj}`
+  - `dotnet restore` to restore the dependencies that are listed in `SweetTreat.csproj`
   - `dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0`
   - `dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2`
   - `dotnet add package Microsoft.EntityFrameworkCore.Proxies -v 5.0.0`
   - `dotnet build` to build the project and its dependencies into a set of binaries
+  - `dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore -v 5.0.0`
+  to add authentication
   - `dotnet tool install --global dotnet-ef` to install EF Core tools
   - `dotnet ef database update`
 - Finally, run the command `dotnet run` to run the project!
 - Note: `dotnet run` also restores and builds the project, so you can use this single command to start the console app
 
 6. Visit the application via web browser at: `localhost:5000/`
+7. Register your email and password to create an account and access site functionality. 
 
 ## Known Bugs
 
