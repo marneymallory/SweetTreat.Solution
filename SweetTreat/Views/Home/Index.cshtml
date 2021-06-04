@@ -1,8 +1,19 @@
 @{
   Layout = "_Layout";
 }
+@using SweetTreat.Models
 
-<h1>Welcome to WEEK FOUR TEMPLATE!</h1>
+<h1>Welcome to Pierre's Sweet and Savory Treats!</h1>
+<hr>
+<br>
+@foreach (Flavor flavor in ModelExpressionProvider["Flavors"])
+{
+  <p>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</p>
+}
+@foreach (Treat treat in ModelExpressionProvider["Treats"])
+{
+  <p>@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId })</p>
+}
 <p>@Html.ActionLink("Sign into an account", "Index", "Account")</p>
 <p>@Html.ActionLink("See all TEMPLATE ITEMS", "Index", "TemplateItems")</p> 
 <p>@Html.ActionLink("See all TEMPLATE CATEGORIES", "Index", "TemplateCategories")</p>
