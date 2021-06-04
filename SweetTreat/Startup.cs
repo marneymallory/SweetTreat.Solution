@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using WeekFiveTemplate.Models;
+using SweetTreat.Models;
 using Microsoft.AspNetCore.Identity;
 
-namespace WeekFiveTemplate
+namespace SweetTreat
 {
   public class Startup
   {
@@ -26,11 +26,11 @@ namespace WeekFiveTemplate
       services.AddMvc();
 
       services.AddEntityFrameworkMySql()
-        .AddDbContext<WeekFiveTemplateContext>(options => options
+        .AddDbContext<SweetTreatContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
 
       services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<WeekFiveTemplateContext>()
+                .AddEntityFrameworkStores<SweetTreatContext>()
                 .AddDefaultTokenProviders();
 
       services.Configure<IdentityOptions>(options =>
@@ -63,7 +63,7 @@ namespace WeekFiveTemplate
 
       app.Run(async (context) =>
       {
-        await context.Response.WriteAsync("TEMPLATE");
+        await context.Response.WriteAsync("Pierre's Sweet and Savory Treats");
       });
     }
   }
